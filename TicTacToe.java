@@ -17,7 +17,17 @@ public class TicTacToe {
 		}
 			
 
-		
+			 public static void chooselatter(String user) {
+				 char symbol = ' ';
+		       if (user.equals("player")) {
+		    	   symbol = 'X';
+		       }
+		       else if (user.equals("cpu")) {
+		    	   symbol = 'O';
+		       }
+			 
+			 
+			 }
 
 	
 
@@ -28,6 +38,7 @@ public class TicTacToe {
 		         System.out.println("WellCome TO the Game");
 		         //Calling Method
 		         createboard();
+		         chooselatter("player");
 	}
 
 }
