@@ -28,6 +28,16 @@ public class TicTacToe {
 			 
 			 
 			 }
+			 //created new class of char type
+			 public static void printGameBoard(char[][] gameBoard) {
+				 //Here Array is called row inside the gameBoard
+				 for(char[] row : gameBoard) {
+					 for(char c : row) {
+						 System.out.print(c);
+					 }
+					 System.out.println();//printing line
+				 }
+			 }
 
 	
 
@@ -36,9 +46,15 @@ public class TicTacToe {
 		
 		         //Printing message
 		         System.out.println("WellCome TO the Game");
+		         char[][] gameBoard1 = {{' ','|',' ','|',' '},
+			               {'-','+','-','+','-'},
+			               {' ','|',' ','|',' '},
+			               {'-','+','-','+','-'},
+			               {' ','|',' ','|',' '}};
 		         //Calling Method
 		         createboard();
 		         chooselatter("player");
+		         printGameBoard(gameBoard1);
 	}
 
 }
