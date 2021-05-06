@@ -1,3 +1,4 @@
+import java.util.*;
 //Class Declaration
 public class TicTacToe {
 	
@@ -17,7 +18,7 @@ public class TicTacToe {
 		}
 			
 
-			 public static void chooselatter(String user) {
+			 public static void chooselatter(char[][]gameboard,int pos,String user) {
 				 char symbol = ' ';
 		       if (user.equals("player")) {
 		    	   symbol = 'X';
@@ -25,9 +26,42 @@ public class TicTacToe {
 		       else if (user.equals("cpu")) {
 		    	   symbol = 'O';
 		       }
+		       
+		       
 			 
-			 
-			 }
+			switch(pos) {               //Using switch case for the position section of user
+		       case 1:
+		    	   gameboard[0][0]= symbol;//row,column
+		       	  break;
+		       case 2:
+		    	   gameboard[0][2]= symbol;
+		       	  break;
+		       case 3:
+		    	   gameboard[0][4]= symbol;
+		       	   break;
+		       case 4:
+		    	   gameboard[2][0]= symbol;
+		       	   break;
+		       case 5:
+		    	   gameboard[2][4]= symbol;
+		       	   break;
+		       case 6:
+		    	   gameboard[2][4]= symbol;
+		       	   break;
+		       case 7:
+		    	   gameboard[4][0]= symbol;
+		       	   break;
+		       case 8:
+		    	   gameboard[4][2]= symbol;
+		       	   break;
+		       case 9:
+		    	   gameboard[4][4]= symbol;
+		       	   break;
+		       	default:
+		       		break;
+			}
+			
+	 }
 			 //created new class of char type
 			 public static void printGameBoard(char[][] gameBoard) {
 				 //Here Array is called row inside the gameBoard
@@ -51,10 +85,16 @@ public class TicTacToe {
 			               {' ','|',' ','|',' '},
 			               {'-','+','-','+','-'},
 			               {' ','|',' ','|',' '}};
+
+				 Scanner scan =new Scanner(System.in);       // Scanner is used to take the input from the user
+				 System.out.println("Enter Your number (1-9)");
+				 int pos = scan.nextInt();
+				 System.out.println(pos);
 		         //Calling Method
+				 chooselatter(gameBoard1, pos, "player");
 		         createboard();
-		         chooselatter("player");
 		         printGameBoard(gameBoard1);
+		         
 	}
 
 }
